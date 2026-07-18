@@ -1,37 +1,354 @@
 
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI Infrastructure Academy | Founded by Alex Akperov</title>
-  <meta name="description" content="AI Infrastructure Academy provides professional education, career development, and enterprise consulting across data centers, power, cooling, networking, GPUs, and enterprise AI." />
+  <title>AI Infrastructure Academy | Alex Akperov</title>
+  <meta name="description" content="AI Infrastructure Academy provides professional education, career development, AI infrastructure consulting, and project, program, and product management advisory." />
   <style>
     :root{
-      --bg:#030711;--bg2:#07111f;--panel:rgba(255,255,255,.06);--panel2:rgba(255,255,255,.1);
-      --line:rgba(148,163,184,.18);--green:#76ff03;--green2:#a3ff12;--cyan:#22d3ee;--blue:#38bdf8;
-      --text:#f8fafc;--muted:#a7b3c4;--muted2:#64748b;--shadow:0 30px 100px rgba(0,0,0,.45);
+      --bg:#030711;
+      --bg2:#07111f;
+      --panel:rgba(255,255,255,.06);
+      --panel2:rgba(255,255,255,.1);
+      --line:rgba(148,163,184,.18);
+      --green:#76ff03;
+      --green2:#a3ff12;
+      --cyan:#22d3ee;
+      --purple:#c084fc;
+      --text:#f8fafc;
+      --muted:#a7b3c4;
+      --muted2:#64748b;
+      --shadow:0 30px 100px rgba(0,0,0,.45);
     }
-    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;overflow-x:hidden}
-    body:before{content:"";position:fixed;inset:0;z-index:-4;background:radial-gradient(circle at 20% 10%,rgba(118,255,3,.12),transparent 30%),radial-gradient(circle at 70% 0%,rgba(34,211,238,.12),transparent 28%),linear-gradient(180deg,#02050c,#07111f 45%,#02050c)}
-    body:after{content:"";position:fixed;inset:0;z-index:-3;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(circle at 50% 0%,black,transparent 72%)}
-    a{text-decoration:none;color:inherit}.container{max-width:1200px;margin:auto;padding:0 24px}.nav-shell{position:sticky;top:0;z-index:50;background:rgba(3,7,17,.74);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
-    .nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;gap:12px;font-weight:950;letter-spacing:-.04em}.mark{width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,var(--green),#27e600);color:#031100;display:grid;place-items:center;font-weight:1000;box-shadow:0 0 36px rgba(118,255,3,.4)}.brand small{display:block;color:var(--green);font-size:11px;letter-spacing:.08em;text-transform:uppercase}.links{display:flex;gap:28px;color:#cbd5e1;font-size:13px;font-weight:800}.links a:hover{color:var(--green)}.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:46px;padding:13px 18px;border-radius:12px;border:1px solid rgba(148,163,184,.24);font-size:14px;font-weight:900;transition:.2s}.btn:hover{transform:translateY(-2px)}.btn-primary{background:linear-gradient(135deg,var(--green2),var(--green));color:#061400;border:0;box-shadow:0 18px 50px rgba(118,255,3,.24)}.btn-ghost{background:rgba(255,255,255,.045);color:white}.btn-cyan{border-color:rgba(34,211,238,.5);color:#a5f3fc;background:rgba(34,211,238,.06)}
-    .hero{position:relative;min-height:calc(100vh - 72px);display:flex;align-items:center;padding:74px 0 50px;overflow:hidden}.hero:before{content:"";position:absolute;inset:0;z-index:-2;background:linear-gradient(90deg,rgba(3,7,17,.96) 0%,rgba(3,7,17,.78) 46%,rgba(3,7,17,.32)),radial-gradient(circle at 72% 48%,rgba(118,255,3,.20),transparent 30%)}
-    .datacenter{position:absolute;right:-7%;top:8%;width:76%;height:72%;z-index:-3;opacity:.68;background:repeating-linear-gradient(90deg,rgba(255,255,255,.04) 0 2px,transparent 2px 70px),linear-gradient(90deg,transparent,rgba(34,211,238,.08)),linear-gradient(180deg,rgba(10,20,35,.5),rgba(1,5,10,.9));clip-path:polygon(12% 5%,100% 0,100% 100%,0 100%)}
-    .datacenter:after{content:"";position:absolute;inset:8% 10%;background-image:radial-gradient(circle,rgba(118,255,3,.9) 0 2px,transparent 3px);background-size:42px 32px;filter:drop-shadow(0 0 8px var(--green));opacity:.35}.energy{position:absolute;left:52%;right:-8%;top:34%;height:240px;z-index:-1;filter:drop-shadow(0 0 16px var(--green)) drop-shadow(0 0 34px rgba(118,255,3,.6));opacity:.9;pointer-events:none}.energy svg{width:100%;height:100%}.energy path{fill:none;stroke:var(--green);stroke-width:5;stroke-linecap:round;stroke-dasharray:18 14;animation:flow 1.2s linear infinite}.energy path:nth-child(2){stroke:#d9ff7a;stroke-width:2;opacity:.95;animation-duration:.8s}.energy path:nth-child(3){stroke:var(--cyan);stroke-width:1.5;opacity:.45;animation-duration:1.6s}@keyframes flow{to{stroke-dashoffset:-64}}
-    .hero-grid{display:grid;grid-template-columns:minmax(0,760px);align-items:center;gap:60px}.kicker{display:inline-flex;align-items:center;gap:9px;padding:9px 13px;border-radius:999px;color:var(--green);background:rgba(118,255,3,.075);border:1px solid rgba(118,255,3,.28);font-size:12px;font-weight:950;letter-spacing:.08em;text-transform:uppercase}.dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 16px var(--green)}h1{margin:24px 0 0;font-size:clamp(54px,8vw,102px);line-height:.9;letter-spacing:-.08em;font-weight:1000}h1 span{color:var(--green);text-shadow:0 0 36px rgba(118,255,3,.22)}.lead{max-width:650px;margin-top:26px;color:#dbe4ef;font-size:21px;line-height:1.55}.sublead{max-width:650px;margin-top:16px;color:var(--muted);font-size:15.5px;line-height:1.75}.actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}.cred{position:relative;z-index:2;display:inline-flex;align-items:center;gap:18px;margin-top:32px;color:var(--muted);font-size:13px;padding:14px 18px;border:1px solid rgba(148,163,184,.16);border-radius:18px;background:linear-gradient(90deg,rgba(3,7,17,.86),rgba(3,7,17,.62));backdrop-filter:blur(14px);box-shadow:0 14px 40px rgba(0,0,0,.2)}.cred strong{color:white}.pipeline{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-top:46px}.step{border-top:1px solid rgba(118,255,3,.45);padding-top:12px;color:#dbe4ef;font-size:12px;font-weight:900;text-transform:uppercase}.step span{display:block;margin-top:4px;color:var(--muted2);font-weight:700;text-transform:none}
-    section{padding:96px 0;border-top:1px solid var(--line)}.section-head{text-align:center;max-width:820px;margin:0 auto 44px}.section-head h2{margin:14px 0 0;font-size:clamp(34px,4vw,56px);letter-spacing:-.06em;line-height:1}.section-head p{margin-top:16px;color:var(--muted);font-size:16px;line-height:1.7}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.card{position:relative;overflow:hidden;border:1px solid rgba(148,163,184,.2);background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.035));border-radius:24px;padding:28px;min-height:310px;box-shadow:0 20px 70px rgba(0,0,0,.16)}.card:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 18% 0%,rgba(118,255,3,.14),transparent 35%);pointer-events:none}.card.cyan:before{background:radial-gradient(circle at 18% 0%,rgba(34,211,238,.16),transparent 35%)}.card.purple:before{background:radial-gradient(circle at 18% 0%,rgba(168,85,247,.16),transparent 35%)}.card>*{position:relative}.icon{width:54px;height:54px;border-radius:18px;display:grid;place-items:center;background:rgba(118,255,3,.1);border:1px solid rgba(118,255,3,.28);color:var(--green);font-size:24px;margin-bottom:24px}.card h3{margin:0;font-size:22px;letter-spacing:-.03em}.status{color:var(--green);font-size:13px;font-weight:900;margin-top:6px}.card p{color:var(--muted);line-height:1.7;font-size:14px;margin-top:16px}.list{list-style:none;padding:0;margin:18px 0 0;display:grid;gap:10px}.list li{color:#dbe4ef;font-size:14px}.list li:before{content:"✓";color:var(--green);font-weight:1000;margin-right:9px}.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.price{border:1px solid rgba(148,163,184,.2);background:rgba(255,255,255,.055);border-radius:24px;padding:28px}.price h3{margin:0}.amount{font-size:52px;letter-spacing:-.06em;font-weight:1000;color:var(--green);margin:18px 0 6px}.amount small{font-size:16px;color:#dbe4ef}.rows{margin-top:20px;border-top:1px solid var(--line)}.row{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid rgba(148,163,184,.12);color:#dbe4ef;font-size:14px}.row strong{color:var(--green)}.newsletter{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center;border:1px solid rgba(118,255,3,.28);background:radial-gradient(circle at 15% 0%,rgba(118,255,3,.16),transparent 35%),rgba(255,255,255,.055);border-radius:30px;padding:40px}.newsletter h2{font-size:42px;line-height:1;letter-spacing:-.05em;margin:0}.newsletter p{color:var(--muted);line-height:1.7;margin-top:14px}.form{display:grid;gap:12px}.form input,.form select,.form textarea{width:100%;border:1px solid rgba(148,163,184,.24);background:rgba(2,6,23,.58);color:white;border-radius:14px;padding:15px;font-size:14px;outline:none}.form textarea{min-height:120px}.footer{padding:34px 0;border-top:1px solid var(--line);color:var(--muted2);font-size:13px}.footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.footer a:hover{color:var(--green)}
-    @media(max-width:960px){.links{display:none}.hero-grid,.cards,.price-grid,.newsletter{grid-template-columns:1fr}.hero{padding-top:50px}.pipeline{grid-template-columns:repeat(2,1fr)}.datacenter{opacity:.35}.energy{left:58%;top:38%;opacity:.26}h1{font-size:58px}.lead{font-size:18px}.cred{display:flex;flex-wrap:wrap}}
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--text);
+      font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      overflow-x:hidden;
+    }
+    body:before{
+      content:"";
+      position:fixed;
+      inset:0;
+      z-index:-4;
+      background:
+        radial-gradient(circle at 20% 10%,rgba(118,255,3,.12),transparent 30%),
+        radial-gradient(circle at 70% 0%,rgba(34,211,238,.12),transparent 28%),
+        linear-gradient(180deg,#02050c,#07111f 45%,#02050c);
+    }
+    body:after{
+      content:"";
+      position:fixed;
+      inset:0;
+      z-index:-3;
+      pointer-events:none;
+      background-image:
+        linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);
+      background-size:56px 56px;
+      mask-image:radial-gradient(circle at 50% 0%,black,transparent 72%);
+    }
+
+    a{text-decoration:none;color:inherit}
+    .container{max-width:1200px;margin:auto;padding:0 24px}
+
+    .nav-shell{
+      position:sticky;
+      top:0;
+      z-index:50;
+      background:rgba(3,7,17,.74);
+      backdrop-filter:blur(18px);
+      border-bottom:1px solid var(--line);
+    }
+    .nav{
+      min-height:72px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      font-weight:950;
+      letter-spacing:-.04em;
+    }
+    .mark{
+      width:38px;
+      height:38px;
+      border-radius:12px;
+      background:linear-gradient(135deg,var(--green),#27e600);
+      color:#031100;
+      display:grid;
+      place-items:center;
+      font-weight:1000;
+      box-shadow:0 0 36px rgba(118,255,3,.4);
+    }
+    .brand small{
+      display:block;
+      color:var(--green);
+      font-size:11px;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+    .links{display:flex;gap:24px;color:#cbd5e1;font-size:13px;font-weight:800}
+    .links a:hover{color:var(--green)}
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      min-height:46px;
+      padding:13px 18px;
+      border-radius:12px;
+      border:1px solid rgba(148,163,184,.24);
+      font-size:14px;
+      font-weight:900;
+      transition:.2s;
+      cursor:pointer;
+    }
+    .btn:hover{transform:translateY(-2px)}
+    .btn-primary{
+      background:linear-gradient(135deg,var(--green2),var(--green));
+      color:#061400;
+      border:0;
+      box-shadow:0 18px 50px rgba(118,255,3,.24);
+    }
+    .btn-ghost{background:rgba(255,255,255,.045);color:white}
+    .btn-cyan{border-color:rgba(34,211,238,.5);color:#a5f3fc;background:rgba(34,211,238,.06)}
+
+    .hero{
+      position:relative;
+      min-height:calc(100vh - 72px);
+      display:flex;
+      align-items:center;
+      padding:74px 0 50px;
+      overflow:hidden;
+      border-top:0;
+    }
+    .hero:before{
+      content:"";
+      position:absolute;
+      inset:0;
+      z-index:-2;
+      background:
+        linear-gradient(90deg,rgba(3,7,17,.96) 0%,rgba(3,7,17,.78) 46%,rgba(3,7,17,.32)),
+        radial-gradient(circle at 72% 48%,rgba(118,255,3,.20),transparent 30%);
+    }
+    .datacenter{
+      position:absolute;
+      right:-7%;
+      top:8%;
+      width:76%;
+      height:72%;
+      z-index:-3;
+      opacity:.68;
+      background:
+        repeating-linear-gradient(90deg,rgba(255,255,255,.04) 0 2px,transparent 2px 70px),
+        linear-gradient(90deg,transparent,rgba(34,211,238,.08)),
+        linear-gradient(180deg,rgba(10,20,35,.5),rgba(1,5,10,.9));
+      clip-path:polygon(12% 5%,100% 0,100% 100%,0 100%);
+    }
+    .datacenter:after{
+      content:"";
+      position:absolute;
+      inset:8% 10%;
+      background-image:radial-gradient(circle,rgba(118,255,3,.9) 0 2px,transparent 3px);
+      background-size:42px 32px;
+      filter:drop-shadow(0 0 8px var(--green));
+      opacity:.35;
+    }
+    .energy{
+      position:absolute;
+      left:52%;
+      right:-8%;
+      top:34%;
+      height:240px;
+      z-index:-1;
+      filter:drop-shadow(0 0 16px var(--green)) drop-shadow(0 0 34px rgba(118,255,3,.6));
+      opacity:.9;
+      pointer-events:none;
+    }
+    .energy svg{width:100%;height:100%}
+    .energy path{
+      fill:none;
+      stroke:var(--green);
+      stroke-width:5;
+      stroke-linecap:round;
+      stroke-dasharray:18 14;
+      animation:flow 1.2s linear infinite;
+    }
+    .energy path:nth-child(2){stroke:#d9ff7a;stroke-width:2;opacity:.95;animation-duration:.8s}
+    .energy path:nth-child(3){stroke:var(--cyan);stroke-width:1.5;opacity:.45;animation-duration:1.6s}
+    @keyframes flow{to{stroke-dashoffset:-64}}
+
+    .hero-grid{display:grid;grid-template-columns:minmax(0,760px);align-items:center;gap:60px}
+    .kicker{
+      display:inline-flex;
+      align-items:center;
+      gap:9px;
+      padding:9px 13px;
+      border-radius:999px;
+      color:var(--green);
+      background:rgba(118,255,3,.075);
+      border:1px solid rgba(118,255,3,.28);
+      font-size:12px;
+      font-weight:950;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+    .dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 16px var(--green)}
+    h1{margin:24px 0 0;font-size:clamp(54px,8vw,102px);line-height:.9;letter-spacing:-.08em;font-weight:1000}
+    h1 span{color:var(--green);text-shadow:0 0 36px rgba(118,255,3,.22)}
+    .lead{max-width:700px;margin-top:26px;color:#dbe4ef;font-size:21px;line-height:1.55}
+    .sublead{max-width:700px;margin-top:16px;color:var(--muted);font-size:15.5px;line-height:1.75}
+    .actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
+    .cred{
+      position:relative;
+      z-index:2;
+      display:inline-flex;
+      align-items:center;
+      gap:18px;
+      margin-top:32px;
+      color:var(--muted);
+      font-size:13px;
+      padding:14px 18px;
+      border:1px solid rgba(148,163,184,.16);
+      border-radius:18px;
+      background:linear-gradient(90deg,rgba(3,7,17,.86),rgba(3,7,17,.62));
+      backdrop-filter:blur(14px);
+      box-shadow:0 14px 40px rgba(0,0,0,.2);
+    }
+    .cred strong{color:white}
+    .pipeline{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-top:46px}
+    .step{border-top:1px solid rgba(118,255,3,.45);padding-top:12px;color:#dbe4ef;font-size:12px;font-weight:900;text-transform:uppercase}
+    .step span{display:block;margin-top:4px;color:var(--muted2);font-weight:700;text-transform:none}
+
+    section{padding:96px 0;border-top:1px solid var(--line)}
+    .section-head{text-align:center;max-width:860px;margin:0 auto 44px}
+    .section-head h2{margin:14px 0 0;font-size:clamp(34px,4vw,56px);letter-spacing:-.06em;line-height:1}
+    .section-head p{margin-top:16px;color:var(--muted);font-size:16px;line-height:1.7}
+
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    .card{
+      position:relative;
+      overflow:hidden;
+      border:1px solid rgba(148,163,184,.2);
+      background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.035));
+      border-radius:24px;
+      padding:28px;
+      min-height:330px;
+      box-shadow:0 20px 70px rgba(0,0,0,.16);
+    }
+    .card:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 18% 0%,rgba(118,255,3,.14),transparent 35%);pointer-events:none}
+    .card.cyan:before{background:radial-gradient(circle at 18% 0%,rgba(34,211,238,.16),transparent 35%)}
+    .card.purple:before{background:radial-gradient(circle at 18% 0%,rgba(168,85,247,.16),transparent 35%)}
+    .card>*{position:relative}
+    .icon{width:54px;height:54px;border-radius:18px;display:grid;place-items:center;background:rgba(118,255,3,.1);border:1px solid rgba(118,255,3,.28);color:var(--green);font-size:24px;margin-bottom:24px}
+    .card h3{margin:0;font-size:22px;letter-spacing:-.03em}
+    .status{color:var(--green);font-size:13px;font-weight:900;margin-top:6px}
+    .card p{color:var(--muted);line-height:1.7;font-size:14px;margin-top:16px}
+
+    .list{list-style:none;padding:0;margin:18px 0 0;display:grid;gap:10px}
+    .list li{color:#dbe4ef;font-size:14px;line-height:1.45}
+    .list li:before{content:"✓";color:var(--green);font-weight:1000;margin-right:9px}
+
+    .management-wrap{
+      display:grid;
+      grid-template-columns:1.05fr .95fr;
+      gap:28px;
+      align-items:stretch;
+    }
+    .management-panel{
+      border:1px solid rgba(118,255,3,.28);
+      background:radial-gradient(circle at 15% 0%,rgba(118,255,3,.16),transparent 35%),rgba(255,255,255,.055);
+      border-radius:30px;
+      padding:40px;
+    }
+    .management-panel h2{font-size:clamp(36px,4vw,54px);line-height:1;letter-spacing:-.06em;margin:18px 0}
+    .management-panel p{color:var(--muted);font-size:16px;line-height:1.75}
+    .management-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    .mini-card{
+      border:1px solid rgba(148,163,184,.18);
+      background:rgba(255,255,255,.045);
+      border-radius:20px;
+      padding:22px;
+    }
+    .mini-card h3{margin:0 0 10px;font-size:18px}
+    .mini-card p{margin:0;color:var(--muted);font-size:13.5px;line-height:1.65}
+
+    .process{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:34px}
+    .process-step{border:1px solid rgba(148,163,184,.18);background:rgba(255,255,255,.045);border-radius:20px;padding:22px}
+    .process-step .number{color:var(--green);font-size:13px;font-weight:950;letter-spacing:.08em;text-transform:uppercase}
+    .process-step h3{margin:10px 0 8px;font-size:18px}
+    .process-step p{margin:0;color:var(--muted);font-size:13.5px;line-height:1.65}
+
+    .price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    .price{border:1px solid rgba(148,163,184,.2);background:rgba(255,255,255,.055);border-radius:24px;padding:28px}
+    .price.featured{border-color:rgba(118,255,3,.45);box-shadow:0 20px 70px rgba(118,255,3,.09)}
+    .price h3{margin:0}
+    .price .eyebrow{color:var(--muted2);font-size:12px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px}
+    .amount{font-size:52px;letter-spacing:-.06em;font-weight:1000;color:var(--green);margin:18px 0 6px}
+    .amount small{font-size:16px;color:#dbe4ef}
+    .rows{margin-top:20px;border-top:1px solid var(--line)}
+    .row{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid rgba(148,163,184,.12);color:#dbe4ef;font-size:14px}
+    .row strong{color:var(--green);text-align:right}
+
+    .newsletter{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center;border:1px solid rgba(118,255,3,.28);background:radial-gradient(circle at 15% 0%,rgba(118,255,3,.16),transparent 35%),rgba(255,255,255,.055);border-radius:30px;padding:40px}
+    .newsletter h2{font-size:42px;line-height:1;letter-spacing:-.05em;margin:0}
+    .newsletter p{color:var(--muted);line-height:1.7;margin-top:14px}
+
+    .form{display:grid;gap:12px}
+    .form input,.form select,.form textarea{width:100%;border:1px solid rgba(148,163,184,.24);background:rgba(2,6,23,.58);color:white;border-radius:14px;padding:15px;font-size:14px;outline:none}
+    .form input:focus,.form select:focus,.form textarea:focus{border-color:rgba(118,255,3,.5);box-shadow:0 0 0 3px rgba(118,255,3,.08)}
+    .form textarea{min-height:140px;resize:vertical}
+
+    .footer{padding:34px 0;border-top:1px solid var(--line);color:var(--muted2);font-size:13px}
+    .footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    .footer a:hover{color:var(--green)}
+
+    @media(max-width:1050px){
+      .links{display:none}
+      .cards,.price-grid,.management-wrap,.newsletter{grid-template-columns:1fr}
+      .process{grid-template-columns:repeat(2,1fr)}
+    }
+    @media(max-width:720px){
+      .nav .btn{display:none}
+      .hero{padding-top:50px}
+      .pipeline{grid-template-columns:repeat(2,1fr)}
+      .datacenter{opacity:.35}
+      .energy{left:58%;top:38%;opacity:.26}
+      h1{font-size:58px}
+      .lead{font-size:18px}
+      .cred{display:flex;flex-wrap:wrap}
+      .management-grid,.process{grid-template-columns:1fr}
+      .management-panel,.newsletter{padding:28px}
+    }
   </style>
 </head>
 <body>
   <header class="nav-shell">
     <div class="container nav">
-      <a class="brand" href="#home"><span class="mark">AI</span><span>AI Infrastructure Academy<small>Founded by Alex Akperov</small></span></a>
-      <nav class="links"><a href="#academy">Academy</a><a href="#course">Course</a><a href="#mentorship">Coaching</a><a href="#consulting">Consulting</a><a href="#resources">Resources</a><a href="#contact">Contact</a></nav>
+      <a class="brand" href="#home">
+        <span class="mark">AI</span>
+        <span>AI Infrastructure Academy<small>Founded by Alex Akperov</small></span>
+      </a>
+      <nav class="links" aria-label="Primary navigation">
+        <a href="#academy">Academy</a>
+        <a href="#management">Management</a>
+        <a href="#course">Course</a>
+        <a href="#mentorship">Coaching</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#contact">Contact</a>
+      </nav>
       <a class="btn btn-primary" href="https://calendly.com/alexakperov/business-consulting" target="_blank" rel="noopener noreferrer">Book a Consultation →</a>
     </div>
   </header>
@@ -39,34 +356,350 @@
   <main id="home">
     <section class="hero">
       <div class="datacenter"></div>
-      <div class="energy" aria-hidden="true"><svg viewBox="0 0 900 180" preserveAspectRatio="none"><path d="M0,120 C120,40 210,150 310,82 C420,8 510,148 625,70 C725,8 785,64 900,24"/><path d="M0,124 C120,44 210,154 310,86 C420,12 510,152 625,74 C725,12 785,68 900,28"/><path d="M0,140 C150,92 260,142 390,98 C520,52 620,112 760,62 C830,38 870,36 900,34"/></svg></div>
+      <div class="energy" aria-hidden="true">
+        <svg viewBox="0 0 900 180" preserveAspectRatio="none">
+          <path d="M0,120 C120,40 210,150 310,82 C420,8 510,148 625,70 C725,8 785,64 900,24"/>
+          <path d="M0,124 C120,44 210,154 310,86 C420,12 510,152 625,74 C725,12 785,68 900,28"/>
+          <path d="M0,140 C150,92 260,142 390,98 C520,52 620,112 760,62 C830,38 870,36 900,34"/>
+        </svg>
+      </div>
       <div class="container hero-grid">
         <div>
-          <div class="kicker"><span class="dot"></span> Education · Career Development · Enterprise Consulting</div>
+          <div class="kicker"><span class="dot"></span> AI Infrastructure · Management · Career Development</div>
           <h1>AI Infrastructure<br><span>Academy.</span></h1>
-          <p class="lead">Master the technology powering artificial intelligence.</p>
-          <p class="sublead">Professional education, career development, and enterprise consulting across power, cooling, data centers, networking, GPUs, AI platforms, and enterprise AI.</p>
-          <div class="actions"><a class="btn btn-primary" href="#course">Explore the Flagship Course →</a><a class="btn btn-ghost" href="https://calendly.com/alexakperov/business-consulting" target="_blank" rel="noopener noreferrer">Book Business Consultation</a><a class="btn btn-cyan" href="https://www.linkedin.com/in/alex-akperov-557834b5/" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a><a class="btn btn-cyan" href="#newsletter">Join Newsletter</a></div>
-          <div class="cred"><strong>Built by a practitioner.</strong><span>Cloud · Data Centers · Product · AI Infrastructure · Education</span></div>
-          <div class="pipeline"><div class="step">Grid<span>Power source</span></div><div class="step">Substation<span>Transformation</span></div><div class="step">UPS & Power<span>Reliable delivery</span></div><div class="step">Cooling<span>Thermal control</span></div><div class="step">GPU Cluster<span>Compute engine</span></div><div class="step">AI Models<span>Intelligence at scale</span></div></div>
+          <p class="lead">Education, advisory, and execution support for the infrastructure and organizations powering artificial intelligence.</p>
+          <p class="sublead">Professional education, career development, enterprise consulting, and project, program, and product management across power, cooling, data centers, networking, cloud, GPUs, AI platforms, and digital transformation.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="#academy">Explore Services →</a>
+            <a class="btn btn-ghost" href="https://calendly.com/alexakperov/business-consulting" target="_blank" rel="noopener noreferrer">Book Business Consultation</a>
+            <a class="btn btn-cyan" href="https://www.linkedin.com/in/alex-akperov-557834b5/" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a>
+          </div>
+          <div class="cred"><strong>Built by a practitioner.</strong><span>Cloud · Data Centers · Product · Program Delivery · AI Infrastructure</span></div>
+          <div class="pipeline">
+            <div class="step">Grid<span>Power source</span></div>
+            <div class="step">Substation<span>Transformation</span></div>
+            <div class="step">UPS & Power<span>Reliable delivery</span></div>
+            <div class="step">Cooling<span>Thermal control</span></div>
+            <div class="step">GPU Cluster<span>Compute engine</span></div>
+            <div class="step">AI Models<span>Intelligence at scale</span></div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="academy"><div class="container"><div class="section-head"><div class="kicker"><span class="dot"></span> The Academy</div><h2>Learn. Build. Lead.</h2><p>One focused platform for AI infrastructure education, professional growth, and enterprise advisory.</p></div><div class="cards"><div class="card" id="consulting"><div class="icon">🏢</div><h3>Enterprise Solutions</h3><div class="status">Available Now</div><p>Strategic advisory for organizations building, selling, planning, or trying to understand AI infrastructure.</p><ul class="list"><li><li>Full Project and Program Management></li></li>AI infrastructure strategy</li><li>Data center and power planning</li><li>Cooling and high-density deployments</li><li>Executive briefings and workshops</li><li>Product and go-to-market advisory</li></ul><div class="actions" style="margin-top:24px;"><a class="btn btn-primary" href="https://calendly.com/alexakperov/business-consulting" target="_blank" rel="noopener noreferrer">Book Consulting</a></div></div><div class="card cyan" id="mentorship"><div class="icon" style="color:var(--cyan);border-color:rgba(34,211,238,.34);background:rgba(34,211,238,.1)">🧭</div><h3>Career Development</h3><div class="status" style="color:var(--cyan)">Available Now</div><p>Personalized coaching for professionals moving into cloud, data centers, product management, or AI infrastructure.</p><ul class="list"><li>Resume reviews</li><li>LinkedIn optimization</li><li>Mock interviews</li><li>Career coaching</li><li>Product management coaching</li></ul><div class="actions" style="margin-top:24px;"><a class="btn btn-primary" href="https://calendly.com/alexakperov/career-mentorship" target="_blank" rel="noopener noreferrer">Book Mentorship</a></div></div><div class="card purple" id="education"><div class="icon" style="color:#c084fc;border-color:rgba(192,132,252,.34);background:rgba(192,132,252,.1)">🎓</div><h3>AI Infrastructure Education</h3><div class="status" style="color:#c084fc">Coming Soon</div><p>In-depth resources to help professionals master AI infrastructure from physical systems to AI models.</p><ul class="list"><li>AI Infrastructure Explained book</li><li>Professional course</li><li>Corporate workshops</li><li>Technical deep dives</li><li>Market research briefs</li></ul></div></div></div></section>
+    <section id="academy">
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker"><span class="dot"></span> Services</div>
+          <h2>Learn. Build. Lead.</h2>
+          <p>One platform for AI infrastructure education, enterprise advisory, execution leadership, and professional growth.</p>
+        </div>
 
-    <section id="course"><div class="container"><div class="section-head"><div class="kicker"><span class="dot"></span> Flagship Course</div><h2>AI Infrastructure Explained</h2><p>A practical foundation for understanding the physical and digital systems behind modern artificial intelligence.</p></div><div class="newsletter"><div><div class="kicker"><span class="dot"></span> In Development</div><h2>One complete course. Built from the ground up.</h2><p>Follow one AI prompt through the internet, cloud edge, load balancers, AI clusters, GPUs, model execution, and response generation—then go deeper into power, cooling, networking, storage, and the AI software stack.</p><ul class="list"><li>4-hour professional course</li><li>Beginner to intermediate</li><li>Instructor-led explanations</li><li>Executive-quality visuals</li><li>Practical infrastructure examples</li></ul></div><div class="form"><div class="row"><span>Status</span><strong>In Development</strong></div><div class="row"><span>Format</span><strong>Online Course</strong></div><div class="row"><span>Launch</span><strong>Coming Soon</strong></div><a class="btn btn-primary" href="#newsletter">Join the Course Waitlist →</a></div></div></div></section>
+        <div class="cards">
+          <div class="card" id="consulting">
+            <div class="icon">🏢</div>
+            <h3>AI & Business Consulting</h3>
+            <div class="status">Available Now</div>
+            <p>End-to-end advisory and execution support for organizations building, selling, planning, modernizing, or trying to understand AI, technology, and data center infrastructure.</p>
+            <ul class="list">
+              <li>Full project and program management</li>
+              <li>AI infrastructure strategy</li>
+              <li>Data center, power, and cooling planning</li>
+              <li>Digital transformation</li>
+              <li>Product and go-to-market strategy</li>
+              <li>Executive briefings and workshops</li>
+              <li>Technical and commercial roadmaps</li>
+            </ul>
+            <div class="actions" style="margin-top:24px;">
+              <a class="btn btn-primary" href="https://calendly.com/alexakperov/business-consulting" target="_blank" rel="noopener noreferrer">Book Consulting</a>
+            </div>
+          </div>
 
-    <section id="pricing"><div class="container"><div class="section-head"><div class="kicker"><span class="dot"></span> Pricing</div><h2>Simple starting points</h2><p>Transparent pricing for mentorship. Consulting is scoped based on business need.</p></div><div class="price-grid"><div class="price"><h3>Mentorship</h3><div class="amount">$150<small>/60 min</small></div><div class="rows"><div class="row"><span>60-minute session</span><strong>$150</strong></div><div class="row"><span>Resume review</span><strong>$99</strong></div><div class="row"><span>LinkedIn optimization</span><strong>$99</strong></div><div class="row"><span>Mock interview</span><strong>$125</strong></div><div class="row"><span>Career package</span><strong>$ Starting from $399</strong></div></div><div class="actions"><a class="btn btn-primary" href="https://calendly.com/alexakperov/career-mentorship" target="_blank" rel="noopener noreferrer">Book Career Mentorship →</a></div></div><div class="price"><h3>Consulting</h3><div class="amount">$250<small>/hour</small></div><p style="color:var(--muted);line-height:1.7">Strategic advisory for AI infrastructure, data centers, product strategy, executive education, and technical planning.</p><div class="actions"><a class="btn btn-primary" href="https://calendly.com/alexakperov/business-consulting" target="_blank" rel="noopener noreferrer">Book Discovery Call →</a></div></div><div class="price"><h3>Education</h3><div class="amount">Soon</div><p style="color:var(--muted);line-height:1.7">Book, professional course, workshops, and market research are in development. Join the waitlist for early access.</p><div class="actions"><a class="btn btn-cyan" href="#newsletter">Join Waitlist →</a></div></div></div></div></section>
+          <div class="card cyan" id="mentorship">
+            <div class="icon" style="color:var(--cyan);border-color:rgba(34,211,238,.34);background:rgba(34,211,238,.1)">🧭</div>
+            <h3>Career Development</h3>
+            <div class="status" style="color:var(--cyan)">Available Now</div>
+            <p>Personalized coaching for professionals moving into cloud, data centers, product management, technical program management, or AI infrastructure.</p>
+            <ul class="list">
+              <li>Resume review and positioning</li>
+              <li>LinkedIn optimization</li>
+              <li>Mock interviews</li>
+              <li>Career strategy</li>
+              <li>Product and program management coaching</li>
+              <li>Leadership and promotion preparation</li>
+            </ul>
+            <div class="actions" style="margin-top:24px;">
+              <a class="btn btn-primary" href="https://calendly.com/alexakperov/career-mentorship" target="_blank" rel="noopener noreferrer">Book Mentorship</a>
+            </div>
+          </div>
 
-    <section id="resources"><div class="container"><div class="section-head"><div class="kicker"><span class="dot"></span> Resources</div><h2>Free tools for learning and career growth</h2><p>New guides, infographics, market briefings, and practical AI infrastructure resources will be added as the Academy grows.</p></div><div class="cards"><div class="card"><div class="icon">📘</div><h3>AI Infrastructure Guides</h3><p>Clear visual guides covering power, cooling, networking, GPUs, and data center architecture.</p></div><div class="card cyan"><div class="icon" style="color:var(--cyan);border-color:rgba(34,211,238,.34);background:rgba(34,211,238,.1)">📊</div><h3>Market Briefings</h3><p>Practical analysis of the infrastructure technologies and companies shaping modern AI.</p></div><div class="card purple"><div class="icon" style="color:#c084fc;border-color:rgba(192,132,252,.34);background:rgba(192,132,252,.1)">🛠️</div><h3>Career Tools</h3><p>Resume, LinkedIn, interview, and career development resources for infrastructure professionals.</p></div></div></div></section>
+          <div class="card purple" id="education">
+            <div class="icon" style="color:var(--purple);border-color:rgba(192,132,252,.34);background:rgba(192,132,252,.1)">🎓</div>
+            <h3>AI Infrastructure Education</h3>
+            <div class="status" style="color:var(--purple)">Coming Soon</div>
+            <p>Practical resources that explain AI infrastructure from the electrical grid and data center to GPU clusters, cloud platforms, and AI models.</p>
+            <ul class="list">
+              <li>AI Infrastructure Explained book</li>
+              <li>Professional online course</li>
+              <li>Corporate workshops</li>
+              <li>Technical deep dives</li>
+              <li>Market research briefs</li>
+              <li>Visual guides and infographics</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <section id="newsletter"><div class="container"><div class="newsletter"><div><div class="kicker"><span class="dot"></span> Academy Newsletter</div><h2>Stay ahead of AI infrastructure.</h2><p>Get practical insights on power, cooling, networking, GPUs, data centers, enterprise AI, and the market shifts shaping the future.</p></div><form class="form" id="newsletterForm" action="https://formspree.io/f/xpqvpzwz" method="POST"><input type="hidden" name="form_type" value="Newsletter signup"><input type="hidden" name="_subject" value="New AI Infrastructure newsletter signup"><input type="email" name="email" placeholder="Enter your email" required><button class="btn btn-primary" type="submit">Subscribe →</button><p style="color:var(--muted2);font-size:12px;line-height:1.5">Your signup will be sent securely to alexakperov@gmail.com.</p></form></div></div></section>
+    <section id="management">
+      <div class="container">
+        <div class="management-wrap">
+          <div class="management-panel">
+            <div class="kicker"><span class="dot"></span> Project · Program · Product</div>
+            <h2>Leadership from discovery through execution.</h2>
+            <p>Whether you are launching a product, recovering a delayed program, modernizing enterprise systems, building a roadmap, or coordinating a cross-functional transformation, engagements begin with an assessment and are scoped around the actual business need.</p>
+            <ul class="list">
+              <li>Project management and delivery leadership</li>
+              <li>Technical program management</li>
+              <li>Product strategy and product management</li>
+              <li>PMO setup and governance</li>
+              <li>Roadmap and operating model development</li>
+              <li>Risk, dependency, and stakeholder management</li>
+              <li>Executive reporting and decision support</li>
+              <li>Cross-functional technology transformation</li>
+            </ul>
+            <div class="actions">
+              <a class="btn btn-primary" href="https://calendly.com/alexakperov/business-consulting" target="_blank" rel="noopener noreferrer">Schedule an Assessment →</a>
+            </div>
+          </div>
 
-    <section id="contact"><div class="container"><div class="section-head"><div class="kicker"><span class="dot"></span> Contact</div><h2>Let’s talk about AI infrastructure.</h2><p>Use this form for consulting, mentorship, speaking, workshops, or book/course updates.</p></div><form class="form" id="contactForm" action="https://formspree.io/f/xpqvpzwz" method="POST" style="max-width:760px;margin:auto"><input type="hidden" name="form_type" value="Website contact"><input type="hidden" name="_subject" value="New AI Infrastructure website inquiry"><input type="text" name="name" placeholder="Name" required><input type="email" name="email" placeholder="Email" required><select name="interest" required><option value="">What are you interested in?</option><option>Business Consulting</option><option>Career Mentorship</option><option>Speaking / Workshop</option><option>Book or Course Updates</option></select><textarea name="message" placeholder="Tell me what you are working on" required></textarea><button class="btn btn-primary" type="submit">Send Message →</button><p style="color:var(--muted2);font-size:12px;line-height:1.5">Messages are sent securely to alexakperov@gmail.com through Formspree.</p></form></div></section>
+          <div class="management-grid">
+            <div class="mini-card">
+              <h3>Project Management</h3>
+              <p>Structured execution for defined initiatives, including scope, schedule, risks, dependencies, stakeholder coordination, and delivery tracking.</p>
+            </div>
+            <div class="mini-card">
+              <h3>Program Management</h3>
+              <p>Leadership across interconnected workstreams, teams, systems, vendors, milestones, governance forums, and executive decisions.</p>
+            </div>
+            <div class="mini-card">
+              <h3>Product Management</h3>
+              <p>Customer discovery, requirements, prioritization, roadmap creation, business cases, launch planning, and product lifecycle leadership.</p>
+            </div>
+            <div class="mini-card">
+              <h3>Transformation Advisory</h3>
+              <p>Practical support for cloud, AI, infrastructure, process, and enterprise system modernization programs.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="process">
+          <div class="process-step">
+            <div class="number">Step 01</div>
+            <h3>Discovery</h3>
+            <p>Clarify the business problem, desired outcome, current state, constraints, stakeholders, and urgency.</p>
+          </div>
+          <div class="process-step">
+            <div class="number">Step 02</div>
+            <h3>Assessment</h3>
+            <p>Review scope, systems, dependencies, risks, operating model, resourcing, and delivery readiness.</p>
+          </div>
+          <div class="process-step">
+            <div class="number">Step 03</div>
+            <h3>Recommendation</h3>
+            <p>Provide a proposed approach, estimated level of effort, engagement model, timeline, and commercial structure.</p>
+          </div>
+          <div class="process-step">
+            <div class="number">Step 04</div>
+            <h3>Execution</h3>
+            <p>Lead or support delivery through milestones, governance, communication, decisions, and measurable outcomes.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="course">
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker"><span class="dot"></span> Flagship Course</div>
+          <h2>AI Infrastructure Explained</h2>
+          <p>A practical foundation for understanding the physical and digital systems behind modern artificial intelligence.</p>
+        </div>
+        <div class="newsletter">
+          <div>
+            <div class="kicker"><span class="dot"></span> In Development</div>
+            <h2>One complete course. Built from the ground up.</h2>
+            <p>Follow one AI prompt through the internet, cloud edge, load balancers, AI clusters, GPUs, model execution, and response generation—then go deeper into power, cooling, networking, storage, and the AI software stack.</p>
+            <ul class="list">
+              <li>4-hour professional course</li>
+              <li>Beginner to intermediate</li>
+              <li>Instructor-led explanations</li>
+              <li>Executive-quality visuals</li>
+              <li>Practical infrastructure examples</li>
+            </ul>
+          </div>
+          <div class="form">
+            <div class="row"><span>Status</span><strong>In Development</strong></div>
+            <div class="row"><span>Format</span><strong>Online Course</strong></div>
+            <div class="row"><span>Launch</span><strong>Coming Soon</strong></div>
+            <a class="btn btn-primary" href="#newsletter">Join the Course Waitlist →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing">
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker"><span class="dot"></span> Pricing</div>
+          <h2>Clear starting points. Scope before commitment.</h2>
+          <p>Career services can be booked directly. Business, project, program, and product engagements begin with discovery and assessment.</p>
+        </div>
+
+        <div class="price-grid">
+          <div class="price featured">
+            <div class="eyebrow">Business Engagement Entry Point</div>
+            <h3>Discovery Assessment</h3>
+            <div class="amount">$250<small>/60 min</small></div>
+            <p style="color:var(--muted);line-height:1.7">A focused assessment to understand your business need before recommending an advisory or delivery engagement.</p>
+            <div class="rows">
+              <div class="row"><span>Business requirements</span><strong>Included</strong></div>
+              <div class="row"><span>Current-state discussion</span><strong>Included</strong></div>
+              <div class="row"><span>Initial recommendations</span><strong>Included</strong></div>
+              <div class="row"><span>Engagement scoping</span><strong>Included</strong></div>
+              <div class="row"><span>Applied to larger engagement</span><strong>When agreed</strong></div>
+            </div>
+            <div class="actions">
+              <a class="btn btn-primary" href="https://calendly.com/alexakperov/business-consulting" target="_blank" rel="noopener noreferrer">Book Assessment →</a>
+            </div>
+          </div>
+
+          <div class="price">
+            <div class="eyebrow">Advisory & Delivery</div>
+            <h3>Consulting Engagement</h3>
+            <div class="amount">Custom</div>
+            <p style="color:var(--muted);line-height:1.7">Scoped after discovery based on complexity, duration, stakeholders, deliverables, and level of execution support.</p>
+            <div class="rows">
+              <div class="row"><span>Strategic advisory</span><strong>Hourly or fixed</strong></div>
+              <div class="row"><span>Full project management</span><strong>Custom scope</strong></div>
+              <div class="row"><span>Full program management</span><strong>Custom scope</strong></div>
+              <div class="row"><span>Product strategy</span><strong>Custom scope</strong></div>
+              <div class="row"><span>Workshops</span><strong>Custom scope</strong></div>
+            </div>
+            <div class="actions">
+              <a class="btn btn-primary" href="https://calendly.com/alexakperov/business-consulting" target="_blank" rel="noopener noreferrer">Discuss Your Engagement →</a>
+            </div>
+          </div>
+
+          <div class="price">
+            <div class="eyebrow">Individual Career Services</div>
+            <h3>Career Mentorship</h3>
+            <div class="amount">$150<small>/60 min</small></div>
+            <div class="rows">
+              <div class="row"><span>Career mentorship</span><strong>$150</strong></div>
+              <div class="row"><span>Resume review</span><strong>$99</strong></div>
+              <div class="row"><span>LinkedIn optimization</span><strong>$99</strong></div>
+              <div class="row"><span>Mock interview</span><strong>$125</strong></div>
+              <div class="row"><span>Career package</span><strong>From $399</strong></div>
+            </div>
+            <div class="actions">
+              <a class="btn btn-primary" href="https://calendly.com/alexakperov/career-mentorship" target="_blank" rel="noopener noreferrer">Book Career Mentorship →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="resources">
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker"><span class="dot"></span> Resources</div>
+          <h2>Practical tools for learning and growth</h2>
+          <p>Guides, infographics, market briefings, and professional resources will be added as the Academy grows.</p>
+        </div>
+        <div class="cards">
+          <div class="card">
+            <div class="icon">📘</div>
+            <h3>AI Infrastructure Guides</h3>
+            <p>Clear visual guides covering power, cooling, networking, GPUs, cloud platforms, and data center architecture.</p>
+          </div>
+          <div class="card cyan">
+            <div class="icon" style="color:var(--cyan);border-color:rgba(34,211,238,.34);background:rgba(34,211,238,.1)">📊</div>
+            <h3>Market Briefings</h3>
+            <p>Practical analysis of the infrastructure technologies, companies, and commercial shifts shaping modern AI.</p>
+          </div>
+          <div class="card purple">
+            <div class="icon" style="color:var(--purple);border-color:rgba(192,132,252,.34);background:rgba(192,132,252,.1)">🛠️</div>
+            <h3>Career Tools</h3>
+            <p>Resume, LinkedIn, interview, leadership, and career development resources for technology professionals.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="newsletter">
+      <div class="container">
+        <div class="newsletter">
+          <div>
+            <div class="kicker"><span class="dot"></span> Academy Newsletter</div>
+            <h2>Stay ahead of AI infrastructure.</h2>
+            <p>Get practical insights on power, cooling, networking, GPUs, data centers, enterprise AI, product strategy, and the market shifts shaping the future.</p>
+          </div>
+          <form class="form" id="newsletterForm" action="https://formspree.io/f/xpqvpzwz" method="POST">
+            <input type="hidden" name="form_type" value="Newsletter signup">
+            <input type="hidden" name="_subject" value="New AI Infrastructure newsletter signup">
+            <input type="email" name="email" placeholder="Enter your email" required>
+            <button class="btn btn-primary" type="submit">Subscribe →</button>
+            <p style="color:var(--muted2);font-size:12px;line-height:1.5">Your signup will be sent securely to alexakperov@gmail.com.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker"><span class="dot"></span> Contact</div>
+          <h2>Let’s discuss what you are building.</h2>
+          <p>Use this form for consulting, project/program/product management, mentorship, speaking, workshops, or book and course updates.</p>
+        </div>
+        <form class="form" id="contactForm" action="https://formspree.io/f/xpqvpzwz" method="POST" style="max-width:760px;margin:auto">
+          <input type="hidden" name="form_type" value="Website contact">
+          <input type="hidden" name="_subject" value="New AI Infrastructure website inquiry">
+          <input type="text" name="name" placeholder="Name" required>
+          <input type="email" name="email" placeholder="Email" required>
+          <select name="interest" required>
+            <option value="">What are you interested in?</option>
+            <option>AI & Business Consulting</option>
+            <option>Project Management</option>
+            <option>Program Management</option>
+            <option>Product Management</option>
+            <option>Career Mentorship</option>
+            <option>Speaking / Workshop</option>
+            <option>Book or Course Updates</option>
+          </select>
+          <textarea name="message" placeholder="Tell me what you are working on, the outcome you need, and any timeline or constraints." required></textarea>
+          <button class="btn btn-primary" type="submit">Send Message →</button>
+          <p style="color:var(--muted2);font-size:12px;line-height:1.5">Messages are sent securely to alexakperov@gmail.com through Formspree.</p>
+        </form>
+      </div>
+    </section>
   </main>
 
-  <footer class="footer"><div class="container footer-inner"><div>© <span id="year"></span> AI Infrastructure Academy. Founded by Alex Akperov.</div><div><a href="#academy">Academy</a> · <a href="#course">Course</a> · <a href="#consulting">Consulting</a> · <a href="#pricing">Pricing</a> · <a href="mailto:alexakperov@gmail.com?subject=AI Infrastructure Inquiry">Email</a> · <a href="https://www.linkedin.com/in/alex-akperov-557834b5/" target="_blank" rel="noopener noreferrer">LinkedIn</a></div></div></footer>
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>© <span id="year"></span> AI Infrastructure Academy. Founded by Alex Akperov.</div>
+      <div>
+        <a href="#academy">Services</a> ·
+        <a href="#management">Management</a> ·
+        <a href="#course">Course</a> ·
+        <a href="#pricing">Pricing</a> ·
+        <a href="mailto:alexakperov@gmail.com?subject=AI Infrastructure Inquiry">Email</a> ·
+        <a href="https://www.linkedin.com/in/alex-akperov-557834b5/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
