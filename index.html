@@ -291,7 +291,7 @@
     .process-step h3{margin:10px 0 8px;font-size:18px}
     .process-step p{margin:0;color:var(--muted);font-size:13.5px;line-height:1.65}
 
-    .price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    .price-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;max-width:980px;margin:0 auto}
     .price{border:1px solid rgba(148,163,184,.2);background:rgba(255,255,255,.055);border-radius:24px;padding:28px}
     .price.featured{border-color:rgba(118,255,3,.45);box-shadow:0 20px 70px rgba(118,255,3,.09)}
     .price h3{margin:0}
@@ -551,59 +551,46 @@
     <section id="pricing">
       <div class="container">
         <div class="section-head">
-          <div class="kicker"><span class="dot"></span> Pricing</div>
-          <h2>Clear starting points. Scope before commitment.</h2>
-          <p>Career services can be booked directly. Business, project, program, and product engagements begin with discovery and assessment.</p>
+          <div class="kicker"><span class="dot"></span> Services & Pricing</div>
+          <h2>Two clear ways to work together.</h2>
+          <p>Choose business consulting for organizational challenges or technology career coaching for individual professional growth.</p>
         </div>
 
         <div class="price-grid">
           <div class="price featured">
-            <div class="eyebrow">Business Engagement Entry Point</div>
-            <h3>Discovery Assessment</h3>
+            <div class="eyebrow">For Organizations & Business Leaders</div>
+            <h3>AI & Business Consulting</h3>
             <div class="amount">$250<small>/60 min</small></div>
-            <p style="color:var(--muted);line-height:1.7">A focused assessment to understand your business need before recommending an advisory or delivery engagement.</p>
+            <p style="color:var(--muted);line-height:1.7">A focused consulting session to understand your objectives, evaluate the current situation, and recommend the best path forward.</p>
             <div class="rows">
-              <div class="row"><span>Business requirements</span><strong>Included</strong></div>
-              <div class="row"><span>Current-state discussion</span><strong>Included</strong></div>
-              <div class="row"><span>Initial recommendations</span><strong>Included</strong></div>
-              <div class="row"><span>Engagement scoping</span><strong>Included</strong></div>
-              <div class="row"><span>Applied to larger engagement</span><strong>When agreed</strong></div>
+              <div class="row"><span>AI and technology strategy</span><strong>Included</strong></div>
+              <div class="row"><span>Business and current-state review</span><strong>Included</strong></div>
+              <div class="row"><span>Product management</span><strong>Available</strong></div>
+              <div class="row"><span>Full project management</span><strong>Available</strong></div>
+              <div class="row"><span>Full program management</span><strong>Available</strong></div>
+              <div class="row"><span>Recommended next steps</span><strong>Included</strong></div>
             </div>
             <div class="actions">
-              <a class="btn btn-primary" href="https://calendly.com/alexakperov/business-consulting" target="_blank" rel="noopener noreferrer">Book Assessment →</a>
+              <a class="btn btn-primary" href="https://calendly.com/alexakperov/business-consulting" target="_blank" rel="noopener noreferrer">Book AI & Business Consulting →</a>
             </div>
           </div>
 
           <div class="price">
-            <div class="eyebrow">Advisory & Delivery</div>
-            <h3>Consulting Engagement</h3>
-            <div class="amount">Custom</div>
-            <p style="color:var(--muted);line-height:1.7">Scoped after discovery based on complexity, duration, stakeholders, deliverables, and level of execution support.</p>
-            <div class="rows">
-              <div class="row"><span>Strategic advisory</span><strong>Hourly or fixed</strong></div>
-              <div class="row"><span>Full project management</span><strong>Custom scope</strong></div>
-              <div class="row"><span>Full program management</span><strong>Custom scope</strong></div>
-              <div class="row"><span>Product strategy</span><strong>Custom scope</strong></div>
-              <div class="row"><span>Workshops</span><strong>Custom scope</strong></div>
-            </div>
-            <div class="actions">
-              <a class="btn btn-primary" href="https://calendly.com/alexakperov/business-consulting" target="_blank" rel="noopener noreferrer">Discuss Your Engagement →</a>
-            </div>
-          </div>
-
-          <div class="price">
-            <div class="eyebrow">Individual Career Services</div>
-            <h3>Career Mentorship</h3>
+            <div class="eyebrow">For Individual Technology Professionals</div>
+            <h3>Technology Career Coaching</h3>
             <div class="amount">$150<small>/60 min</small></div>
+            <p style="color:var(--muted);line-height:1.7">A personalized session to review your goals, assess your current position, and develop a practical action plan for your next career move.</p>
             <div class="rows">
-              <div class="row"><span>Career mentorship</span><strong>$150</strong></div>
-              <div class="row"><span>Resume review</span><strong>$99</strong></div>
-              <div class="row"><span>LinkedIn optimization</span><strong>$99</strong></div>
-              <div class="row"><span>Mock interview</span><strong>$125</strong></div>
-              <div class="row"><span>Career package</span><strong>From $399</strong></div>
+              <div class="row"><span>Career strategy</span><strong>Included</strong></div>
+              <div class="row"><span>Resume guidance</span><strong>Included</strong></div>
+              <div class="row"><span>LinkedIn guidance</span><strong>Included</strong></div>
+              <div class="row"><span>Interview preparation</span><strong>Included</strong></div>
+              <div class="row"><span>Leadership and transition planning</span><strong>Included</strong></div>
+              <div class="row"><span>Personalized next steps</span><strong>Included</strong></div>
             </div>
+            <p style="color:var(--muted2);font-size:13px;line-height:1.6;margin-top:18px">Deeper resume, LinkedIn, mock interview, or career package services may be recommended after the initial session.</p>
             <div class="actions">
-              <a class="btn btn-primary" href="https://calendly.com/alexakperov/career-mentorship" target="_blank" rel="noopener noreferrer">Book Career Mentorship →</a>
+              <a class="btn btn-primary" href="https://calendly.com/alexakperov/career-mentorship" target="_blank" rel="noopener noreferrer">Book Technology Career Coaching →</a>
             </div>
           </div>
         </div>
@@ -674,7 +661,7 @@
             <option>Project Management</option>
             <option>Program Management</option>
             <option>Product Management</option>
-            <option>Career Mentorship</option>
+            <option>Technology Career Coaching</option>
             <option>Speaking / Workshop</option>
             <option>Book or Course Updates</option>
           </select>
